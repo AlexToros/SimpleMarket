@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace GameStore
 {
-    public partial class Listing : System.Web.UI.Page
+    public partial class Listing : Page
     {
         Repository rep = new Repository();
 
