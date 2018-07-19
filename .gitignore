@@ -1,0 +1,5 @@
+*.csproj
+*.csproj.user
+Web.Debug.Config
+Web.Release.Config
+obj
