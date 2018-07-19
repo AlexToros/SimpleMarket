@@ -17,8 +17,16 @@ namespace GameStore
         {
             get {
                 int page;
-                return int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+                page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+                if (page <= 0) return 1;
+                if (page > MaxPage) return MaxPage;
+                return page;
             }
+        }
+
+        protected int MaxPage
+        {
+            get { return (int)Math.Ceiling((decimal)rep.Games.Count() / pageSize); }
         }
 
         protected IEnumerable<Game> GetGames()
