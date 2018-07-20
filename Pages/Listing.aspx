@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listing.aspx.cs" Inherits="GameStore.Listing" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listing.aspx.cs" Inherits="GameStore.Listing" 
+    MasterPageFile="~/Pages/Store.Master"%>
+<asp:Content ContentPlaceHolderID="bodyContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Game-Store</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+        <div id ="content">
             <%
                 foreach (GameStore.Game game in GetGames())
                 {
@@ -23,8 +16,8 @@
                 }
                 %>
         </div>
-    </form>
-    <div>
+
+    <div class ="pager">
         <%
             for (int i = 1, n = MaxPage; i <= n; i++)
             {
@@ -32,5 +25,4 @@
                        i, i == CurrentPage ? "class='selected'" : "", i));
             }%>
     </div>
-</body>
-</html>
+</asp:Content>
