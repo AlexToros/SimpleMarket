@@ -17,11 +17,18 @@ namespace GameStore
         {
             get {
                 int page;
-                page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+                page = GetPageFrowRequest();
                 if (page <= 0) return 1;
                 if (page > MaxPage) return MaxPage;
                 return page;
             }
+        }
+
+        private int GetPageFrowRequest()
+        {
+            int page;
+            string reqValue = (string)RouteData.Values["page"] ?? Request.QueryString["page"];
+            return reqValue != null && int.TryParse(reqValue, out page) ? page : 1;
         }
 
         protected int MaxPage
