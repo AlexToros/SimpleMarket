@@ -22,6 +22,15 @@ namespace GameStore.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Links элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::GameStore.Controls.CategoryList Links;
+        
+        /// <summary>
         /// bodyContent элемент управления.
         /// </summary>
         /// <remarks>

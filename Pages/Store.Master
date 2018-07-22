@@ -14,7 +14,7 @@
                 <div class="title">GameStore - магазин компьютерных игр</div>
             </div>
             <div id="categories">
-                <GS:CategoryLinks runat="server" />
+                <GS:CategoryLinks runat="server" ID="Links" /> 
             </div>
             <div>
                 <asp:ContentPlaceHolder ID ="bodyContent" runat="server"/>

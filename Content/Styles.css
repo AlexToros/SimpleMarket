@@ -45,7 +45,7 @@ div#categories {
             background:#CCC;
         }
         div#categories a.selected:hover {
-            background:#666;
+            background:#999;
         }
 
 div.item {
