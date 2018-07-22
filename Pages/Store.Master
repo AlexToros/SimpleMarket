@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Store.master.cs" Inherits="GameStore.Pages.Store" %>
-
+<%@ Register TagPrefix="GS" TagName="CategoryLinks" Src="~/Controls/CategoryList.ascx"%>
 <!DOCTYPE html>
 
 <html>
@@ -14,7 +14,7 @@
                 <div class="title">GameStore - магазин компьютерных игр</div>
             </div>
             <div id="categories">
-                Добавим сюда контент позже
+                <GS:CategoryLinks runat="server" />
             </div>
             <div>
                 <asp:ContentPlaceHolder ID ="bodyContent" runat="server"/>
