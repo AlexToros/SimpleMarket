@@ -23,7 +23,8 @@
         <%
             for (int i = 1, n = MaxPage; i <= n; i++)
             {
-                string path = RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() { { "page", i } }).VirtualPath;
+                string path = RouteTable.Routes.GetVirtualPath(null, null,
+                    new RouteValueDictionary() { { "category", CurrentCategory }, { "page", i } }).VirtualPath;
 
                 Response.Write(String.Format("<a href='{0}' {1}>{2}</a>",
                        path, i == CurrentPage ? "class='selected'" : "", i));

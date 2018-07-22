@@ -11,7 +11,7 @@ namespace GameStore
     {
         Repository rep = new Repository();
 
-        private int pageSize = 4;
+        private int pageSize = 3;
 
         protected int CurrentPage
         {
@@ -21,6 +21,12 @@ namespace GameStore
                 if (page <= 0) return 1;
                 if (page > MaxPage) return MaxPage;
                 return page;
+            }
+        }
+        protected string CurrentCategory
+        {
+            get {
+                return (string)RouteData.Values["category"] ?? Request.QueryString["category"];
             }
         }
 
@@ -33,15 +39,21 @@ namespace GameStore
 
         protected int MaxPage
         {
-            get { return (int)Math.Ceiling((decimal)rep.Games.Count() / pageSize); }
+            get { return (int)Math.Ceiling((decimal)FilterGames().Count() / pageSize); }
         }
 
         protected IEnumerable<Game> GetGames()
         {
-            return rep.Games
+            return FilterGames()
                 .OrderBy(g => g.GameID)
                 .Skip((CurrentPage - 1) * pageSize)
                 .Take(pageSize);
+        }
+
+        private IEnumerable<Game> FilterGames()
+        {
+            IEnumerable<Game> games = rep.Games;
+            return CurrentCategory == null ? games : games.Where(g => g.Category.Equals(CurrentCategory));
         }
         protected void Page_Load(object sender, EventArgs e)
         {
