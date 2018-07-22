@@ -42,7 +42,7 @@ namespace GameStore
             get { return (int)Math.Ceiling((decimal)FilterGames().Count() / pageSize); }
         }
 
-        protected IEnumerable<Game> GetGames()
+        public IEnumerable<Game> GetGames()
         {
             return FilterGames()
                 .OrderBy(g => g.GameID)
@@ -50,7 +50,7 @@ namespace GameStore
                 .Take(pageSize);
         }
 
-        private IEnumerable<Game> FilterGames()
+        private IEnumerable<GameStore.Game> FilterGames()
         {
             IEnumerable<Game> games = rep.Games;
             return CurrentCategory == null ? games : games.Where(g => g.Category.Equals(CurrentCategory));
@@ -58,5 +58,6 @@ namespace GameStore
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+        
     }
 }

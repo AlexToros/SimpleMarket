@@ -68,6 +68,12 @@ div.item {
         font-size: 1.1em;
         margin: .4em 0 0 0;
     }
+    div.item button {
+        color: white;
+        background-color: #333;
+        border: 1px solid black;
+        float: right;
+    }
 
 div.pager {
     text-align: right;
@@ -91,3 +97,9 @@ div.pager {
             background-color: #353535;
             color: white;
         }
+td.price{
+    width:1%
+}
+td.addButton {
+    width:1%
+}

@@ -5,18 +5,24 @@
 <asp:Content ContentPlaceHolderID="bodyContent" runat="server">
 
         <div id ="content">
-            <%
-                foreach (GameStore.Game game in GetGames())
-                {
-                    Response.Write(String.Format(@"
-                        <div class='item'>
-                            <h3>{0}</h3>
-                            {1}
-                            <h4>{2:c}</h4>
-                        </div>",
-                        game.Name, game.Description, game.Price));
-                }
-                %>
+            <asp:Repeater ItemType="GameStore.Game" SelectMethod="GetGames" runat="server">
+                <ItemTemplate>
+                    <div class="item">
+                        <h3><%# Item.Name %></h3>
+                        <%# Item.Description %>
+                        <table>
+                            <tr>
+                                <td class="price"><h4><%# Item.Price.ToString("c") %></h4></td>
+                                <td class="addButton">
+                                    <button name="add" type="submit" value="<%# Item.GameID %>"">
+                                        Добавить в корзину
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
 
     <div class ="pager">
