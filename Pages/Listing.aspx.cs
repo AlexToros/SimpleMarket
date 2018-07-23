@@ -13,6 +13,26 @@ namespace GameStore
 
         private int pageSize = 3;
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (IsPostBack)
+            {
+                int selectedGameId;
+                if (int.TryParse(Request.Form["add"], out selectedGameId))
+                {
+                    Game selectedGame = rep.Games.FirstOrDefault(g => g.GameID == selectedGameId);
+
+                    if (selectedGame != null)
+                    {
+                        SessionHelper.GetCart(Session).AddItem(selectedGame, 1);
+                        SessionHelper.Set(Session, SessionKey.RETURN_URL, Request.RawUrl);
+
+                        //Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "cart", null).VirtualPath);
+                    }
+                }
+            }
+        }
+
         protected int CurrentPage
         {
             get {
@@ -55,9 +75,6 @@ namespace GameStore
             IEnumerable<Game> games = rep.Games;
             return CurrentCategory == null ? games : games.Where(g => g.Category.Equals(CurrentCategory));
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-        
+
     }
 }
