@@ -13,11 +13,11 @@
                         <table>
                             <tr>
                                 <td class ="list"><h4><%# Item.Price.ToString("c") %></h4></td>
-                                <tdclass ="list">
+                                <td class ="list">
                                     <button name="add" type="submit" value="<%# Item.GameID %>">
                                         Добавить в корзину
                                     </button>
-                                </tdclass>
+                                </td>
                             </tr>
                         </table>
                     </div>
