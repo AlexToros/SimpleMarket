@@ -13,5 +13,17 @@ namespace GameStore.Pages
         {
 
         }
+        public IEnumerable<CartLine> GetCartLines()
+        {
+            return SessionHelper.GetCart(Session).Lines;
+        }
+        public decimal CartTotal
+        {
+            get { return SessionHelper.GetCart(Session).TotalCost; }
+        }
+        public string ReturnUrl
+        {
+            get { return SessionHelper.Get<string>(Session, SessionKey.RETURN_URL); }
+        }
     }
 }

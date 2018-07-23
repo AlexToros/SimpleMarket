@@ -1,16 +1,36 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CartView.aspx.cs" Inherits="GameStore.Pages.CartView" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CartView.aspx.cs" Inherits="GameStore.Pages.CartView" 
+    MasterPageFile="~/Pages/Store.Master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="bodyContent" runat="server">
+    <div id="content">
+        <h2>Ваша корзина</h2>
+        <table id ="cartTable">
+            <thead>
+                <tr>
+                    <th>Количество</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Общая стоимость</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="Repeater1" ItemType="GameStore.CartLine" 
+                    SelectMethod="GetCartLines" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%# Item.Quantity%></td>
+                            <td><%# Item.Game.Name%></td>
+                            <td><%# Item.Game.Price.ToString("c")%></td>
+                            <td><%# ((Item.Quantity*Item.Game.Price).ToString("c"))%></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"> ИТОГО:</td>
+                    <td><%= CartTotal.ToString("c") %></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</asp:Content>
