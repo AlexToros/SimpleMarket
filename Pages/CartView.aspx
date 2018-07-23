@@ -32,5 +32,8 @@
                 </tr>
             </tfoot>
         </table>
+        <p class="actionButtons">
+            <a href="<%= ReturnUrl %>">Продолжить покупки</a>
+        </p>
     </div>
 </asp:Content>

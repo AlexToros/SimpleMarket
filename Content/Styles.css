@@ -100,3 +100,21 @@ div.pager {
 td.list{
     width:1%
 }
+
+h2 {margin-top:0.3em}
+#cartTable {width:90%;}
+#cartTable tfoot td{border-top: 1px dotted gray; font-weight:bold;}
+#cartTable thead th{text-align:right;}
+#cartTable thead th:first-child{text-align:center;}
+#cartTable thead th:nth-child(2){text-align:left;}
+#cartTable tbody td{text-align:right;}
+#cartTable tbody td:first-child{text-align:center}
+#cartTable tbody td:nth-child(2){text-align:left}
+#cartTable tfoot tr td{text-align:right}
+p.actionButtons {text-align:center;}
+.actionButtons a, button.actionButtons{
+    font: .8em Arial; color: white; margin: .5em;
+    text-decoration:none;padding: .15em 1.5em .2em 1.5em;
+    background-color:#353535;border: 1px solid black
+}
+
