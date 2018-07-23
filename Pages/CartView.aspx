@@ -14,13 +14,19 @@
             </thead>
             <tbody>
                 <asp:Repeater ID="Repeater1" ItemType="GameStore.CartLine" 
-                    SelectMethod="GetCartLines" runat="server">
+                    SelectMethod="GetCartLines" EnableViewState="false" runat="server">
                     <ItemTemplate>
                         <tr>
                             <td><%# Item.Quantity%></td>
                             <td><%# Item.Game.Name%></td>
                             <td><%# Item.Game.Price.ToString("c")%></td>
                             <td><%# ((Item.Quantity*Item.Game.Price).ToString("c"))%></td>
+                            <td>
+                                <button type="submit" class="actionButtons" name ="remove"
+                                    value="<%# Item.Game.GameID %>">
+                                    Удалить
+                                </button>
+                            </td>
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>

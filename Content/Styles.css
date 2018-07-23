@@ -22,7 +22,7 @@ div#content {
     border-left: 2px solid gray;
     margin-left: 9em;
     padding: 1em;
-    min-height:140px;
+    min-height: 140px;
 }
 
 div#categories {
@@ -30,29 +30,34 @@ div#categories {
     width: 8em;
     padding: .3em;
 }
+
     div#categories a {
         font: bold 1.1em "Arial Narrow", "Franklin Gothic Medium", Arial;
-        display:block;
-        text-decoration:none;
+        display: block;
+        text-decoration: none;
         padding: .6em;
         color: black;
         border-bottom: 1px solid silver;
     }
+
         div#categories a.selected {
-            background:#666; color:white;
+            background: #666;
+            color: white;
         }
+
         div#categories a:hover {
-            background:#CCC;
+            background: #CCC;
         }
+
         div#categories a.selected:hover {
-            background:#999;
+            background: #999;
         }
 
 div.item {
-        border-top: 1px dotted gray;
-        padding-top: .7em;
-        margin-bottom: .7em;
-    }
+    border-top: 1px dotted gray;
+    padding-top: .7em;
+    margin-bottom: .7em;
+}
 
     div.item:first-child {
         border-top: none;
@@ -68,6 +73,7 @@ div.item {
         font-size: 1.1em;
         margin: .4em 0 0 0;
     }
+
     div.item button {
         color: white;
         background-color: #333;
@@ -97,8 +103,9 @@ div.pager {
             background-color: #353535;
             color: white;
         }
-td.list{
-    width:1%
+
+td.list {
+    width: 1%
 }
 
 h2 {margin-top:0.3em}
@@ -110,11 +117,15 @@ h2 {margin-top:0.3em}
 #cartTable tbody td{text-align:right;}
 #cartTable tbody td:first-child{text-align:center}
 #cartTable tbody td:nth-child(2){text-align:left}
-#cartTable tfoot tr td{text-align:right}
-p.actionButtons {text-align:center;}
-.actionButtons a, button.actionButtons{
-    font: .8em Arial; color: white; margin: .5em;
-    text-decoration:none;padding: .15em 1.5em .2em 1.5em;
-    background-color:#353535;border: 1px solid black
+#cartTable tfoot tr td { text-align: right}
+p.actionButtons {text-align:left;}
+.actionButtons a, button.actionButtons {
+    font: .8em Arial;
+    color: white;
+    margin: .5em;
+    text-decoration: none;
+    padding: .15em 1.5em .2em 1.5em;
+    background-color: #353535;
+    border: 1px solid black
 }
 

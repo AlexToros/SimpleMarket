@@ -11,7 +11,17 @@ namespace GameStore.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                Repository rep = new Repository();
+                int gameId;
+                if (int.TryParse(Request.Form["remove"], out gameId))
+                {
+                    Game gameToRemove = rep.Games.FirstOrDefault(g => g.GameID == gameId);
+                    if (gameToRemove != null)
+                        SessionHelper.GetCart(Session).RemoveLine(gameToRemove);
+                }
+            }
         }
         public IEnumerable<CartLine> GetCartLines()
         {
