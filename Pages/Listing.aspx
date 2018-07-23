@@ -12,8 +12,8 @@
                         <%# Item.Description %>
                         <table>
                             <tr>
-                                <td class="price"><h4><%# Item.Price.ToString("c") %></h4></td>
-                                <td class="addButton">
+                                <td><h4><%# Item.Price.ToString("c") %></h4></td>
+                                <td>
                                     <button name="add" type="submit" value="<%# Item.GameID %>"">
                                         Добавить в корзину
                                     </button>
