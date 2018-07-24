@@ -4,8 +4,8 @@
 <asp:Content ID ="Content1" ContentPlaceHolderID="bodyContent" runat="server">
     <div id ="content">
         <div id ="checkoutForm" class="checkout" runat="server">
-            <h2>Оформить зааз</h2>
-            Пожалуйста, введдите свои данные, и мы отправим Вам товар прямо сейчас
+            <h2>Оформить заказ</h2>
+            Пожалуйста, введите свои данные, и мы отправим Вам товар прямо сейчас
 
             <div id="errors" data-valmsg-summary="true">
                 <ul>
@@ -15,30 +15,30 @@
             </div>
             <h3>Заказчик</h3>
             <div>
-                <label for="name">"Имя"</label>
+                <label for="name">Имя</label>
                 <input id="name" name="name" runat="server" />
             </div>
             
             <h3>Адрес доставки</h3>
             <div>
-                <label for="line1">"Адрес 1"</label>
+                <label for="line1">Адрес 1</label>
                 <input id="line1" name="line1" runat="server" />
             </div>
             <div>
-                <label for="line2">"Адрес 2"</label>
+                <label for="line2">Адрес 2</label>
                 <input id="line2" name="line2" runat="server" />
             </div>
             <div>
-                <label for="line3">"Адрес 3"</label>
+                <label for="line3">Адрес 3</label>
                 <input id="line3" name="line3" runat="server" />
             </div>
             <div>
-                <label for="city">"Город"</label>
+                <label for="city">Город</label>
                 <input id="city" name="city" runat="server" />
             </div>
 
             <h3>Детали заказа</h3>
-            <input type="checkbox" id="giftWrap" name="giftWrap" value="true" />
+            <input type="checkbox" id="giftWrap" name="giftWrap" value="true" runat ="server"/>
             Использовать подарочную упаковку?
 
             <p class="actionButtons">
