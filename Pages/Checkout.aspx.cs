@@ -22,8 +22,7 @@ namespace GameStore.Pages
                 {
                     myOrder.OrderLines = new List<OrderLine>();
 
-                    Cart myCart = SessionHelper.GetCart(Session);
-                    var or = new Repository().Orders;                   
+                    Cart myCart = SessionHelper.GetCart(Session);            
 
                     foreach (CartLine line in myCart.Lines)
                     {

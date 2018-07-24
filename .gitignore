@@ -3,3 +3,4 @@
 Web.Debug.Config
 Web.Release.Config
 obj
+*.js
