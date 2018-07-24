@@ -15,7 +15,34 @@ namespace GameStore
         }
         public IEnumerable<Order> Orders
         {
-            get { return context.Orders; }
+            get { return context.Orders.Include("Order.OrderLines.Games"); }
+        }
+        public void SaveOrder(Order order)
+        {
+            if (order.OrderId == 0)
+            {
+                order = context.Orders.Add(order);
+
+                foreach (OrderLine line in order.OrderLines)
+                {
+                    context.Entry(line.Game).State = System.Data.Entity.EntityState.Modified;
+                }
+            }
+            else
+            {
+                Order dbOrder = context.Orders.Find(order.OrderId);
+                if (dbOrder != null)
+                {
+                    dbOrder.Name = order.Name;
+                    dbOrder.Line1 = order.Line1;
+                    dbOrder.Line2 = order.Line2;
+                    dbOrder.Line3 = order.Line3;
+                    dbOrder.GiftWrap = order.GiftWrap;
+                    dbOrder.Dispatched = order.Dispatched;
+                    dbOrder.City = order.City;
+                }
+            }
+            context.SaveChanges();
         }
     }
 }

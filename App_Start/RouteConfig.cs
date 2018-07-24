@@ -14,7 +14,7 @@ namespace GameStore
 
             routes.MapPageRoute("cart", "cart", "~/Pages/CartView.aspx");
 
-            routes.MapPageRoute("checkout","checkout","~Pages/Checkout.aspx");
+            routes.MapPageRoute("checkout","checkout","~/Pages/Checkout.aspx");
         }
     }
 }
