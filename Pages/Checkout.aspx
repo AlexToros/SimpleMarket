@@ -15,30 +15,30 @@
             </div>
             <h3>Заказчик</h3>
             <div>
-                <label for="name">Имя</label>
-                <input id="name" name="name" runat="server" />
+                <label for="name">Имя:</label>
+                <input id="name" name="name" />
             </div>
             
             <h3>Адрес доставки</h3>
             <div>
-                <label for="line1">Адрес 1</label>
-                <input id="line1" name="line1" runat="server" />
+                <label for="line1">Адрес 1:</label>
+                <input id="line1" name="line1" />
             </div>
             <div>
-                <label for="line2">Адрес 2</label>
-                <input id="line2" name="line2" runat="server" />
+                <label for="line2">Адрес 2:</label>
+                <input id="line2" name="line2" />
             </div>
             <div>
-                <label for="line3">Адрес 3</label>
-                <input id="line3" name="line3" runat="server" />
+                <label for="line3">Адрес 3:</label>
+                <input id="line3" name="line3"  />
             </div>
             <div>
-                <label for="city">Город</label>
-                <input id="city" name="city" runat="server" />
+                <label for="city">Город:</label>
+                <input id="city" name="city"  />
             </div>
 
             <h3>Детали заказа</h3>
-            <input type="checkbox" id="giftWrap" name="giftWrap" value="true" runat ="server"/>
+            <input type="checkbox" id="giftWrap" name="giftWrap" value="true"/>
             Использовать подарочную упаковку?
 
             <p class="actionButtons">

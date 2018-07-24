@@ -23,13 +23,7 @@ namespace GameStore.Pages
                     myOrder.OrderLines = new List<OrderLine>();
 
                     Cart myCart = SessionHelper.GetCart(Session);
-
-                    myOrder.City = city.Value;
-                    myOrder.GiftWrap = giftWrap.Checked;
-                    myOrder.Line1 = String.IsNullOrEmpty(line1.Value) ? null : line1.Value;
-                    myOrder.Line2 = String.IsNullOrEmpty(line2.Value) ? null : line2.Value;
-                    myOrder.Line3 = String.IsNullOrEmpty(line3.Value) ? null : line3.Value;
-                    myOrder.Name = name.Value;
+                    var or = new Repository().Orders;                   
 
                     foreach (CartLine line in myCart.Lines)
                     {

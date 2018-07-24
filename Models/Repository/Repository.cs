@@ -15,7 +15,7 @@ namespace GameStore
         }
         public IEnumerable<Order> Orders
         {
-            get { return context.Orders.Include("Order.OrderLines.Games"); }
+            get { return context.Orders; }
         }
         public void SaveOrder(Order order)
         {
