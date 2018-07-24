@@ -13,5 +13,9 @@ namespace GameStore
         {
             get { return context.Games; }
         }
+        public IEnumerable<Order> Orders
+        {
+            get { return context.Orders; }
+        }
     }
 }
