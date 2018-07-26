@@ -45,5 +45,35 @@ namespace GameStore
             }
             context.SaveChanges();
         }
+
+        public void SaveGame(Game game)
+        {
+            if (game.GameID == 0)
+                game = context.Games.Add(game);
+            else {
+                Game dbGame = context.Games.Find(game.GameID);
+                if (dbGame != null)
+                {
+                    dbGame.Name = game.Name;
+                    dbGame.Price = game.Price;
+                    dbGame.Description = game.Description;
+                    dbGame.Category = game.Category;
+                }
+            }
+            context.SaveChanges();
+        }
+        public void DeleteGame(Game game)
+        {
+            IEnumerable<Order> orderLines = context.Orders
+                .Include(o => o.OrderLines.Select(ol => ol.Game))
+                .Where(o => o.OrderLines.Count(ol => ol.Game.GameID == game.GameID) > 0);
+
+            foreach (Order order in orderLines)
+            {
+                context.Orders.Remove(order);
+            }
+            context.Games.Remove(game);
+            context.SaveChanges();
+        }
     }
 }
