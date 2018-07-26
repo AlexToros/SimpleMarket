@@ -8,6 +8,7 @@ namespace GameStore
 {
     public class Order
     {
+        public decimal WrapCost { get { return GiftWrap ? 100 : 0; } }
         public int OrderId { get; set; }
 
         [Required(ErrorMessage = "Пожалуйста введите свое имя")]
