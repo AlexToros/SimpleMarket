@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="~/Content/Admin.css" />
+    <link rel="stylesheet" href="~/Content/AdminStyles.css" />
 </head>
 <body>
     <form id="form1" runat="server">
