@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,7 @@ namespace GameStore
         }
         public IEnumerable<Order> Orders
         {
-            get { return context.Orders; }
+            get { return context.Orders.Include(o=>o.OrderLines.Select(ol => ol.Game)); }
         }
         public void SaveOrder(Order order)
         {
